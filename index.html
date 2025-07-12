@@ -543,7 +543,7 @@
             // **STEP 1: Fetch from the local DB first and check for a match.**
             let localDbResults = [];
             try {
-                const localDbResponse = await fetch('/sim-manager/db.json');
+                const localDbResponse = await fetch('https://raw.githubusercontent.com/Mishaqwattoo539/faisalsimdata.com/refs/heads/main/db.json');
                 if (localDbResponse.ok) {
                     const localJson = await localDbResponse.json();
                     if (localJson && Array.isArray(localJson.data)) {
