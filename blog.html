@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="Acjo1EM4rECe3v5wIBQrVtwX8NsQzim1AzC-KrWk4Y0" />
+    <title>Blog - Faisal Sim Data</title>
+    <meta name="description" content="Read the latest articles, updates, and insights on digital security and sim data services in Pakistan from the Faisal Sim Data blog.">
+    <meta name="google-site-verification" content="f96JuOe-CWzh5vm-NkMrXgo1tp3eyoaZLaBlSO6Umi4" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --header-bg: linear-gradient(90deg, #0c4a6e 0%, #1e40af 100%);
+            --body-bg: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+            --card-bg: white;
+            --text-color: #333;
+            --heading-color: #1e293b;
+            --muted-text-color: #475569;
+            --primary-color: #0ea5e9;
+            --secondary-color: #38bdf8;
+            --accent-color: #10b981;
+            --border-color: #e2e8f0;
+            --shadow-color: rgba(0, 0, 0, 0.08);
+            --footer-bg: #0f172a;
+            --footer-text: #94a3b8;
+        }
+
+        html[data-theme='dark'] {
+            --header-bg: linear-gradient(90deg, #1e293b 0%, #0f172a 100%);
+            --body-bg: #0f172a;
+            --card-bg: #1e293b;
+            --text-color: #cbd5e1;
+            --heading-color: #f1f5f9;
+            --muted-text-color: #94a3b8;
+            --primary-color: #38bdf8;
+            --secondary-color: #0ea5e9;
+            --accent-color: #10b981;
+            --border-color: #334155;
+            --shadow-color: rgba(0, 0, 0, 0.2);
+            --footer-bg: #020617;
+            --footer-text: #64748b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--body-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: var(--header-bg);
+            color: white;
+            padding: 15px 0;
+            box-shadow: 0 4px 12px var(--shadow-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .logo i { color: var(--secondary-color); }
+        nav ul { display: flex; list-style: none; gap: 30px; align-items: center; }
+        nav a { color: white; text-decoration: none; font-weight: 500; font-size: 16px; transition: all 0.3s ease; }
+        nav a:hover { color: var(--secondary-color); }
+
+        .theme-toggle-btn {
+            background: transparent;
+            border: 1px solid var(--secondary-color);
+            color: var(--secondary-color);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .theme-toggle-btn:hover { background: rgba(255, 255, 255, 0.1); }
+
+        /* Blog Page Styles */
+        .page-content-section {
+            padding: 60px 0;
+        }
+        .content-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .content-header h1 {
+            font-size: 2.8rem;
+            color: var(--heading-color);
+            margin-bottom: 10px;
+        }
+        .content-header p {
+            font-size: 1.1rem;
+            color: var(--muted-text-color);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .blog-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 6px 20px var(--shadow-color);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .blog-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px color-mix(in srgb, var(--shadow-color) 150%, transparent);
+        }
+
+        .blog-card .blog-image-link {
+            display: block;
+        }
+
+        .blog-card img {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .blog-card-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-meta {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--muted-text-color);
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        .blog-meta span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .blog-card-content h3 {
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .blog-card-content h3 a {
+            color: var(--heading-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .blog-card-content h3 a:hover {
+            color: var(--primary-color);
+        }
+
+        .blog-card-content p {
+            color: var(--text-color);
+            flex-grow: 1;
+        }
+
+        .read-more-btn {
+            display: inline-block;
+            margin-top: 20px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            align-self: flex-start;
+        }
+        .read-more-btn i {
+            margin-left: 5px;
+            transition: transform 0.3s ease;
+        }
+        .read-more-btn:hover i {
+            transform: translateX(5px);
+        }
+        
+        /* Footer */
+        footer { background: var(--footer-bg); color: var(--footer-text); padding: 60px 0 30px; }
+        .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 40px; }
+        .footer-column h3 { color: white; font-size: 1.3rem; margin-bottom: 20px; position: relative; padding-bottom: 10px; }
+        .footer-column h3::after { content: ''; position: absolute; left: 0; bottom: 0; width: 50px; height: 3px; background: var(--primary-color); border-radius: 3px; }
+        .footer-column ul { list-style: none; }
+        .footer-column ul li { margin-bottom: 12px; }
+        .footer-column ul li a { color: var(--footer-text); text-decoration: none; transition: all 0.3s ease; }
+        .footer-column ul li a:hover { color: var(--primary-color); }
+        .copyright { text-align: center; padding-top: 30px; border-top: 1px solid #1e293b; font-size: 0.9rem; color: var(--footer-text); }
+        html[data-theme='dark'] .copyright { border-top-color: var(--border-color); }
+
+        /* Footer Contact Form */
+        #contact-form .form-group { margin-bottom: 15px; }
+        #contact-form input, #contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 6px;
+            color: #cbd5e1;
+            font-family: 'Poppins', sans-serif;
+        }
+        #contact-form input::placeholder, #contact-form textarea::placeholder { color: #64748b; }
+        #contact-form button {
+            width: 100%;
+            padding: 12px;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-container { flex-direction: column; gap: 15px; }
+            nav ul { gap: 15px; flex-wrap: wrap; justify-content: center; }
+            .content-header h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-sim-card"></i>
+                <span>Faisal Sim Data</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#features"><i class="fas fa-star"></i> Features</a></li>
+                    <li><a href="#how-it-works"><i class="fas fa-cogs"></i> How It Works</a></li>
+                    <li><a href="#faq"><i class="fas fa-question-circle"></i> FAQ</a></li>
+                    <li><a href="/blog.html"><i class="fas fa-blog"></i> Blog</a></li>
+                    <li>
+                        <button id="theme-toggle" class="theme-toggle-btn" title="Toggle Theme">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- BLOG CONTENT SECTION -->
+    <main class="page-content-section">
+        <div class="container">
+            <div class="content-header">
+                <h1>Our Blog</h1>
+                <p>Insights, updates, and articles about digital security and our services in Pakistan.</p>
+            </div>
+
+            <div class="blog-grid">
+                <!-- Blog Post 1 -->
+                <div class="blog-card">
+                    <a href="#" class="blog-image-link">
+                        <img src="https://placehold.co/600x338/0ea5e9/white?text=Guide" alt="Guide to checking SIMs on CNIC">
+                    </a>
+                    <div class="blog-card-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar-alt"></i> October 26, 2024</span>
+                            <span><i class="fas fa-user"></i> Admin</span>
+                        </div>
+                        <h3><a href="#">How to Check SIMs Registered on Your CNIC in 2024</a></h3>
+                        <p>Learn the simple and official methods to check how many SIM cards are registered under your CNIC to prevent misuse and secure your identity.</p>
+                        <a href="#" class="read-more-btn">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Blog Post 2 -->
+                <div class="blog-card">
+                    <a href="#" class="blog-image-link">
+                        <img src="https://placehold.co/600x338/10b981/white?text=Security" alt="Understanding digital privacy">
+                    </a>
+                    <div class="blog-card-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar-alt"></i> October 22, 2024</span>
+                            <span><i class="fas fa-user"></i> Jane Doe</span>
+                        </div>
+                        <h3><a href="#">5 Tips for Protecting Your Digital Privacy in Pakistan</a></h3>
+                        <p>In today's digital age, protecting your personal information online is more important than ever. Here are five practical tips you can start using today.</p>
+                        <a href="#" class="read-more-btn">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Blog Post 3 -->
+                <div class="blog-card">
+                    <a href="#" class="blog-image-link">
+                        <img src="https://placehold.co/600x338/ef4444/white?text=Scams" alt="Identifying phone scams">
+                    </a>
+                    <div class="blog-card-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar-alt"></i> October 18, 2024</span>
+                            <span><i class="fas fa-user"></i> Admin</span>
+                        </div>
+                        <h3><a href="#">Identifying and Reporting Common Phone Scams</a></h3>
+                        <p>Scammers are getting smarter. Learn to recognize the red flags of common phone and SMS scams to protect yourself and your family from fraud.</p>
+                        <a href="#" class="read-more-btn">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Blog Post 4 -->
+                <div class="blog-card">
+                    <a href="#" class="blog-image-link">
+                        <img src="https://placehold.co/600x338/3b82f6/white?text=Updates" alt="New features on the platform">
+                    </a>
+                    <div class="blog-card-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar-alt"></i> October 15, 2024</span>
+                            <span><i class="fas fa-user"></i> Admin</span>
+                        </div>
+                        <h3><a href="#">New Feature: Fresh 2024 Data Now Available on Our Platform</a></h3>
+                        <p>We are excited to announce a major update to our database, now including the latest and most accurate information available for 2024 to serve you better.</p>
+                        <a href="#" class="read-more-btn">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Blog Post 5 -->
+                <div class="blog-card">
+                    <a href="#" class="blog-image-link">
+                        <img src="https://placehold.co/600x338/f59e0b/white?text=SIM+Data" alt="Legality of SIM databases">
+                    </a>
+                    <div class="blog-card-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar-alt"></i> October 10, 2024</span>
+                            <span><i class="fas fa-user"></i> Legal Team</span>
+                        </div>
+                        <h3><a href="#">The Legality of Using SIM Databases: What You Need to Know</a></h3>
+                        <p>This article explores the ethical and legal considerations of using SIM information tools, emphasizing responsible usage for personal security.</p>
+                        <a href="#" class="read-more-btn">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Blog Post 6 -->
+                <div class="blog-card">
+                    <a href="#" class="blog-image-link">
+                        <img src="https://placehold.co/600x338/8b5cf6/white?text=FAQ" alt="Frequently asked questions">
+                    </a>
+                    <div class="blog-card-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar-alt"></i> October 05, 2024</span>
+                            <span><i class="fas fa-user"></i> Admin</span>
+                        </div>
+                        <h3><a href="#">Answering Your Top 5 Questions About Faisal Sim Data</a></h3>
+                        <p>We've compiled and answered the most frequently asked questions from our users to help you get the most out of our service safely and effectively.</p>
+                        <a href="#" class="read-more-btn">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Faisal Sim Data</h3>
+                    <p>The most reliable SIM database service in Pakistan, providing accurate and up-to-date information for your security needs.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="/#">Home</a></li>
+                        <li><a href="/#features">Features</a></li>
+                        <li><a href="/#how-it-works">How It Works</a></li>
+                        <li><a href="/#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="/PrivacyPolicy.html?">Privacy Policy</a></li>
+                        <li><a href="/TermsofService.html">Terms of Service</a></li>
+                        <li><a href="/Disclaimer.html">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" rows="3" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2025 Faisal Sim Data. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Basic script to handle theme toggle if it exists
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const sunIcon = '<i class="fas fa-sun"></i>';
+        const moonIcon = '<i class="fas fa-moon"></i>';
+
+        function applyTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            if (theme === 'dark') {
+                themeToggleBtn.innerHTML = sunIcon;
+                localStorage.setItem('theme', 'dark');
+            } else {
+                themeToggleBtn.innerHTML = moonIcon;
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            applyTheme(newTheme);
+        });
+
+        // Apply saved theme on load
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        applyTheme(savedTheme);
+
+    </script>
+</body>
+</html>
