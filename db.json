@@ -1,0 +1,33 @@
+{
+    "status": "success",
+    "data": [
+        {
+            "Name": "Ishaq Wattoo",
+            "Mobile": "03060312220",
+            "CNIC": "3510115447167",
+            "Operator": "Jazz Warid",
+            "Address": "Chunian PAKISTAN"
+        },
+        {
+            "Name": "Dawood Ibrahim ",
+            "Mobile": "03236314243",
+            "CNIC": "3510124355612",
+            "Operator": "Jazz",
+            "Address": "Wattoo Chowk Chunian"
+        },
+        {
+            "Name": "Muhammad Arshad",
+            "Mobile": "03018744441",
+            "CNIC": "9040101177453",
+            "Operator": "Jazz",
+            "Address": "Unknown"
+        },
+        {
+            "Name": "Allah Ditta",
+            "Mobile": "03060312220",
+            "CNIC": "3510176712787",
+            "Operator": "Jazz",
+            "Address": "Chunian"
+        }
+    ]
+}
