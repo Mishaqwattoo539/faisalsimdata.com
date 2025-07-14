@@ -5,32 +5,28 @@
             "Mobile": "03060312220",
             "CNIC": "3510115447167",
             "Operator": "Jazz Warid",
-            "Address": "Chunian PAKISTAN",
-            "__source": "local"
+            "Address": "Chunian PAKISTAN"
         },
         {
             "Name": "Muhammad Arshad",
             "Mobile": "03018744441",
             "CNIC": "9040101177453",
             "Operator": "Jazz",
-            "Address": "Unknown",
-            "__source": "local"
+            "Address": "Unknown"
         },
         {
             "Name": "Hassan Ali",
             "Mobile": "03060312220",
             "CNIC": "3510176712787",
             "Operator": "Jazz",
-            "Address": "Chunian",
-            "__source": "local"
+            "Address": "Chunian"
         },
         {
             "Name": "Sidra Ashraf",
             "Mobile": "03454912776",
             "CNIC": "3520281134338",
             "Operator": "Unknown",
-            "Address": "Lahore -Pakistan",
-            "__source": "local"
+            "Address": "Lahore -Pakistan"
         }
     ]
 }
