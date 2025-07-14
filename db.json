@@ -9,18 +9,25 @@
             "Address": "Chunian PAKISTAN"
         },
         {
-            "Name": "Dawood Ibrahim ",
-            "Mobile": "03236314243",
-            "CNIC": "3510124355612",
-            "Operator": "Jazz",
-            "Address": "Wattoo Chowk Chunian"
-        },
-        {
             "Name": "Muhammad Arshad",
             "Mobile": "03018744441",
             "CNIC": "9040101177453",
             "Operator": "Jazz",
             "Address": "Unknown"
+        },
+        {
+            "Name": "Hassan Ali",
+            "Mobile": "03060312220",
+            "CNIC": "3510176712787",
+            "Operator": "Jazz",
+            "Address": "Chunian"
+        },
+        {
+            "Name": "Sidra Ashraf",
+            "Mobile": "03454912776",
+            "CNIC": "3520281134338",
+            "Operator": "Unknown",
+            "Address": "Lahore -Pakistan"
         }
     ]
 }
