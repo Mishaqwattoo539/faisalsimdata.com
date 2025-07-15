@@ -1,11 +1,11 @@
 {
     "data": [
         {
-            "Name": "Ishaq Wattoo",
+            "Name": "ANAM ABBAS",
             "Mobile": "03060312220",
-            "CNIC": "3510115447167",
+            "CNIC": "3520189490672",
             "Operator": "Jazz Warid",
-            "Address": "Chunian PAKISTAN"
+            "Address": "LAHORE PAKISTAN"
         },
         {
             "Name": "Muhammad Arshad",
@@ -13,13 +13,6 @@
             "CNIC": "9040101177453",
             "Operator": "Jazz",
             "Address": "Unknown"
-        },
-        {
-            "Name": "Hassan Ali",
-            "Mobile": "03060312220",
-            "CNIC": "3510176712787",
-            "Operator": "Jazz",
-            "Address": "Chunian"
         },
         {
             "Name": "Sidra Ashraf",
